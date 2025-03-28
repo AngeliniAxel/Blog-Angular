@@ -1,59 +1,122 @@
-# BlogAngular
+# 📝 Aplicación de Sistema de Blog en Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+## 🎯 **Descripción del ejercicio**
+El objetivo del ejercicio es desarrollar un sistema de blog en Angular mediante un array de datos estático creado en el propio servicio de Angular (sin conexión HTTP a ninguna API).
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 **Requisitos de la aplicación**
 
-```bash
-ng serve
-```
+### ✅ **Blog Angular:**
+- Permitir a los usuarios crear publicaciones de blog a través de un formulario.
+- Visualizar las publicaciones creadas.
+- Listado de noticias en la página principal.
+- Filtrar por:
+  - **Categoría** de viaje.
+  - **Título** de la publicación.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+### 🌐 **Rutas de la aplicación**
+1. `/home` → Muestra el listado de Post desde el array de datos estático.
+2. `/new` → Formulario para agregar una nueva publicación:
+   - **Título**
+   - **Texto**
+   - **Autor**
+   - **Imagen (URL)**
+   - **Categoría**
+   - **Fecha de publicación**  
+   *➡️ Todos los campos son obligatorios.*  
+   *➡️ Validación personalizada para la URL mediante expresión regular.*  
+3. `/post/:idpost` → Muestra la vista detallada de una publicación específica.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🏷️ **Categorías de Post**
+- Las categorías se almacenarán en su propio array dentro del servicio.
+- Categorías predefinidas:
+  - Playa
+  - Montaña
+  - Ciudad
+  - Rural
+  - Festivales
+- El selector de categorías se puede implementar mediante:
+  - **@Output**
+  - **QueryParams**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🔎 **Filtros y Búsquedas**
+✅ Filtrar por categoría  
+✅ Búsqueda por título de la publicación  
 
-## Building
+---
 
-To build the project run:
+## 🏗️ **Pasos a seguir**
 
-```bash
-ng build
-```
+### 1. **Definir Interfaces**
+Definir el interfaz de datos de nuestra aplicación. En este caso tendremos que definir el interfaz Post que cuenta con las siguientes propiedades:
+id, Titulo, texto, autor, imagen (puede ser una url), fecha, categoria:ICategory
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Y el interfaz de Category que cuenta con las siguientes propiedades.
+id, Titulo
 
-## Running unit tests
+## 🚀 **2. Crear el Servicio (BlogService)**
+### 🔹 **Array de Posts**  
+➡️ Almacenar publicaciones de manera estática.  
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 🔹 **Array de Categorías**  
+- Playa  
+- Montaña  
+- Ciudad  
+- Rural  
+- Festivales  
 
-```bash
-ng test
-```
+### 🛠️ **Métodos en el Servicio:**
+✅ `insert(post: IPost)` → Añadir un nuevo post  
+✅ `getAll()` → Obtener todos los posts  
+✅ `getByCategoria(cat: string)` → Obtener los posts de una categoría específica  
+✅ `getById(id: number)` → Obtener un post por su ID  
+✅ `getAllCategories()` → Obtener todas las categorías  
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🎯 **3. Componente BlogComponent**
+✅ Mostrar todos los posts usando el método `getAll()` del servicio.  
+✅ Filtro de categoría desde `getAllCategories()`.  
+✅ Filtro por título mediante una barra de búsqueda.  
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📝 **4. Componente FormularioComponent**
+✅ **Formulario reactivo con validaciones:**  
+- **Título, texto, autor, imagen (URL), categoría, fecha** → **Obligatorios**  
+✅ **Validar la URL mediante una expresión regular**  
+✅ **Al enviar el formulario** → Insertar el post mediante el método `insert()` del servicio.  
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 👁️ **5. Componente ViewPostComponent**
+✅ Mostrar la información detallada de un post mediante `getById()` del servicio.  
+
+---
+
+## 🖼️ **Estilo y Maquetación**
+✅ **CSS + Bootstrap**  
+✅ **Diseño responsive**  
+
+---
+
+## 💻 **Requisitos Técnicos**
+✅ **Componentes Angular** → Lista de posts, formulario y vista detallada.  
+✅ **Servicios Angular** → Gestión de datos.  
+✅ **Formularios Reactivos** → Validación y envío de datos.  
+✅ **Interfaces** → Tipado correcto de datos.  
+
+---
+
+## 📂 **Entregables**
+✅ **Código completo en Angular**  
+✅ **Repositorio GitHub** → Commits detallados por tarea  
+
+---
