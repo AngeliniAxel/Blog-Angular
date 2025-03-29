@@ -67,11 +67,16 @@
             class="nav-link active"
             [routerLink]="['/home']"
             routerLinkActive="active"
+            data-bs-dismiss="offcanvas"
             >Home</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/new']" routerLinkActive="active"
+          <a
+            class="nav-link"
+            [routerLink]="['/new']"
+            routerLinkActive="active"
+            data-bs-dismiss="offcanvas"
             >New post</a
           >
         </li>
@@ -83,11 +88,11 @@
 
       <!-- Filter dropdown inside offcanvas menu -->
       <label class="form-label mt-3">Filter by category</label>
-      <select class="form-select mt-1" aria-label="Default select example">
-        <option selected>All</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+      <select class="form-select mt-1">
+        <option data-bs-dismiss="offcanvas" selected>All</option>
+        <option data-bs-dismiss="offcanvas" value="1">One</option>
+        <option data-bs-dismiss="offcanvas" value="2">Two</option>
+        <option data-bs-dismiss="offcanvas" value="3">Three</option>
       </select>
     </div>
   </div>
