@@ -3,10 +3,14 @@
     <!-- Left side: Navigation links (visible only on medium and larger screens) -->
     <ul class="nav nav-tabs">
       <li class="nav-item d-none d-md-block">
-        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active"
+          >Home</a
+        >
       </li>
       <li class="nav-item d-none d-md-block">
-        <a class="nav-link" href="#">New post</a>
+        <a class="nav-link" [routerLink]="['/new']" routerLinkActive="active"
+          >New post</a
+        >
       </li>
 
       <!-- Menu button for small screens (opens offcanvas menu) -->
@@ -59,10 +63,17 @@
       <ul class="nav nav-tabs offcanvas-menu">
         <div class="container-fluid"></div>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
+          <a
+            class="nav-link active"
+            [routerLink]="['/home']"
+            routerLinkActive="active"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">New post</a>
+          <a class="nav-link" [routerLink]="['/new']" routerLinkActive="active"
+            >New post</a
+          >
         </li>
       </ul>
 
