@@ -1,5 +1,6 @@
 <nav class="background">
   <div class="container-lg d-flex align-items-center justify-content-between">
+    <!-- Left side: Navigation links (visible only on medium and larger screens) -->
     <ul class="nav nav-tabs">
       <li class="nav-item d-none d-md-block">
         <a class="nav-link active" href="#">Home</a>
@@ -8,6 +9,7 @@
         <a class="nav-link" href="#">New post</a>
       </li>
 
+      <!-- Menu button for small screens (opens offcanvas menu) -->
       <li class="nav-item">
         <a
           class="btn nav-link d-md-none"
@@ -20,12 +22,15 @@
       </li>
     </ul>
 
+    <!-- Right side: Search and Filter (hidden on small screens) -->
     <div class="d-flex align-items-center gap-3 d-none d-md-flex">
+      <!-- Search input -->
       <div class="d-flex align-items-center">
         <label class="form-label px-1">Search</label>
         <input class="form-control" type="text" />
       </div>
 
+      <!-- Filter dropdown -->
       <div class="d-flex">
         <label class="form-label">Filter by category</label>
         <select class="form-select m-2" aria-label="Default select example">
@@ -38,8 +43,10 @@
     </div>
   </div>
 
+  <!-- Offcanvas menu (for small screens) -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas">
     <div class="offcanvas-header">
+      <!-- Close button for the offcanvas menu -->
       <button
         type="button"
         class="btn-close"
@@ -48,6 +55,7 @@
       ></button>
     </div>
     <div class="offcanvas-body pt-0">
+      <!-- Offcanvas navigation links -->
       <ul class="nav nav-tabs offcanvas-menu">
         <div class="container-fluid"></div>
         <li class="nav-item">
@@ -58,9 +66,11 @@
         </li>
       </ul>
 
+      <!-- Search input inside offcanvas menu -->
       <label class="form-label mt-3">Search</label>
       <input class="form-control" type="text" />
 
+      <!-- Filter dropdown inside offcanvas menu -->
       <label class="form-label mt-3">Filter by category</label>
       <select class="form-select mt-1" aria-label="Default select example">
         <option selected>All</option>
