@@ -9,4 +9,9 @@ export class PostService {
   getAll(): Post[] {
     return posts;
   }
+
+  getCategories(): string[] {
+    const arrCategories = posts.map((post) => post.category.title);
+    return [...new Set(arrCategories)];
+  }
 }
