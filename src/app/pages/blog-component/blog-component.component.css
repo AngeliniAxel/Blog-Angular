@@ -1,0 +1,21 @@
+.container-lg {
+  max-width: 1200px;
+}
+
+article {
+  color: var(--dark);
+  transition: 0.3s;
+  .detail {
+    color: var(--grey);
+  }
+
+  img {
+    height: 200px;
+  }
+
+  &:hover {
+    border-color: var(--purple-strong);
+    cursor: pointer;
+    scale: 1.01;
+  }
+}
