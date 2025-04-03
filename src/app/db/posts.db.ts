@@ -16,19 +16,19 @@ export const posts: Post[] = [
     category: { id: 1, title: 'Comics' },
   },
   {
-    id: 2282624083,
-    title: 'Exploring Tokyo: A Guide to Hidden Gems',
-    text: `Tokyo is a vibrant city that perfectly blends tradition and modernity. 
-    While many tourists flock to Shibuya and Shinjuku, the true charm of Tokyo lies in its hidden alleys and quiet temples. 
-    Try exploring Yanaka for a taste of old Tokyo, where narrow streets and traditional wooden houses transport you to another era. 
-    For a modern experience, head to Akihabara, the mecca of anime and video games, where you can find multi-story arcades, themed cafes, and unique collectibles. 
-    Tokyo's culinary scene is equally diverse — from Michelin-starred sushi restaurants to small ramen shops with long lines of locals, the variety is endless. 
-    At night, visit Odaiba for a breathtaking view of the Rainbow Bridge and the futuristic skyline.`,
-    author: 'Jane Smith',
+    id: 3394829102,
+    title: 'The Rise of Streaming: How TV Series Have Changed',
+    text: `Streaming platforms have revolutionized the way we consume TV series. 
+    The days of waiting a week for the next episode are gone, replaced by binge-watching entire seasons in a single weekend. 
+    Shows like "Stranger Things" and "The Mandalorian" have demonstrated the power of online platforms, 
+    while older series like "Breaking Bad" found new life thanks to streaming. 
+    With increased budgets and cinematic production quality, TV series now rival blockbuster films in storytelling and visual effects. 
+    The shift has also allowed for more diverse narratives, with international hits like "Squid Game" proving that language is no longer a barrier.`,
+    author: 'Michael Carter',
     image:
-      'https://drifttravel.com/wp-content/uploads/2023/05/alex-knight-wfwUpfVqrKU-unsplash.jpg',
-    date: new Date('2025-03-05'),
-    category: { id: 2, title: 'Travel' },
+      'https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABUZRetY0NwWkIBQ-9QF0PLIDcuUCPKgno_8riE_In9tHRgqqTTSG-vGiP5ctXrVMY4PESkV5-x1LE_MGn32QtUZfnoNR4Hx9GoRI.jpg?r=9fa',
+    date: new Date('2025-02-18'),
+    category: { id: 2, title: 'Series' },
   },
   {
     id: 2476233376,
@@ -55,16 +55,19 @@ export const posts: Post[] = [
     category: { id: 3, title: 'Movies' },
   },
   {
-    id: 1425722893,
-    title: 'A Culinary Adventure in Italy',
-    text: `Italian cuisine is known for its rich flavors and fresh ingredients. 
-      From the streets of Naples, where pizza originated, to the hills of Tuscany known for their wine and olive oil, 
-      Italy offers a culinary experience like no other. Don't forget to try the gelato in Florence!`,
-    author: 'Clara Davis',
+    id: 7839210456,
+    title: 'Solo Leveling: The Manhwa That Redefined Power Fantasy',
+    text: `Solo Leveling has become one of the most influential manhwas in recent years, captivating fans with its breathtaking artwork and compelling power fantasy storyline. 
+    Written by Chugong and illustrated by Dubu, the series follows Sung Jin-Woo, an E-rank hunter who is considered the weakest in a world where hunters fight monsters in mysterious gates. 
+    However, after a near-death experience in a dungeon, he gains access to a mysterious system that allows him to level up like a video game character. 
+    What makes Solo Leveling stand out is its smooth storytelling, stunning fight sequences, and the evolution of its protagonist from an underdog to an unstoppable force. 
+    The manhwa also introduces a unique take on the dungeon and guild system, blending RPG elements seamlessly into its world. 
+    With an anime adaptation on the horizon, Solo Leveling is set to reach an even larger audience, solidifying its place as one of the greatest modern fantasy series.`,
+    author: 'Alex Turner',
     image:
-      'https://images.squarespace-cdn.com/content/5dd5b5e9f226644911c4d733/1637280211908-71Z1F519RGX7UX4Y4QDZ/foodie-tour-of-italy-top-food-experiences.jpg?content-type=image%2Fjpeg',
-    date: new Date('2025-03-15'),
-    category: { id: 2, title: 'Travel' },
+      'https://lede-admin.aftermath.site/wp-content/uploads/sites/55/2025/03/Solo-Leveling-Crunchyroll-Anime-A1-Pictures.jpg?resize=2880%2C1620',
+    date: new Date('2025-04-02'),
+    category: { id: 4, title: 'Anime' },
   },
   {
     id: 3204361129,
@@ -76,16 +79,19 @@ export const posts: Post[] = [
     category: { id: 3, title: 'Movies' },
   },
   {
-    id: 2778102796,
-    title: 'Best Destinations for Solo Travelers',
-    text: `Traveling alone can be a rewarding experience. 
-      Destinations like Kyoto, Reykjavik, and Barcelona offer rich cultural experiences, friendly locals, and a safe atmosphere for solo adventurers. 
-      Discover the best places to explore on your own and create unforgettable memories.`,
-    author: 'Jane Smith',
+    id: 6728394012,
+    title: 'How Sitcoms Have Evolved Over the Decades',
+    text: `Sitcoms have been a staple of television since the early days of broadcasting, but their format has evolved significantly. 
+    Classic shows like "Friends" and "Seinfeld" relied on laugh tracks and episodic storytelling, 
+    while modern sitcoms such as "Brooklyn Nine-Nine" and "The Good Place" have embraced serialized narratives and diverse characters. 
+    The rise of streaming has also allowed sitcoms to experiment with new formats, 
+    blending comedy with deeper emotional themes, as seen in "BoJack Horseman" and "Ted Lasso." 
+    As the genre continues to evolve, sitcoms remain a reflection of the times, adapting to cultural shifts and audience expectations.`,
+    author: 'Emily Rogers',
     image:
-      'https://www.travelandleisure.com/thmb/cP77yqBX7WUa8C19Gv1hMfu_osM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/angkor-wat-cambodia-TROPICALSOLO0718-2164e3dcc32147ab897c02854ea326fa.jpg',
-    date: new Date('2025-03-20'),
-    category: { id: 2, title: 'Travel' },
+      'https://weareintent.com/wp-content/uploads/2023/11/85td8-1024x576.jpg',
+    date: new Date('2025-03-01'),
+    category: { id: 2, title: 'Series' },
   },
   {
     id: 9361333697,
@@ -111,15 +117,18 @@ export const posts: Post[] = [
     category: { id: 3, title: 'Movies' },
   },
   {
-    id: 2703167122,
-    title: 'Discovering the Secrets of the Amazon Rainforest',
-    text: `The Amazon Rainforest is home to the richest biodiversity on the planet. 
-      From colorful macaws to elusive jaguars, the Amazon offers a window into the natural world. 
-      Learn about the indigenous cultures and the challenges facing this fragile ecosystem.`,
-    author: 'Clara Davis',
-    image: 'https://ychef.files.bbci.co.uk/1280x720/p0h5bx6q.jpg',
-    date: new Date('2025-03-26'),
-    category: { id: 2, title: 'Travel' },
+    id: 4893027711,
+    title: 'Why "Game of Thrones" Defined a Generation',
+    text: `"Game of Thrones" wasn't just a fantasy show; it was a cultural phenomenon. 
+    Based on George R.R. Martin's books, the series combined epic storytelling, unexpected deaths, and complex political intrigue. 
+    It set a new standard for television with its cinematic battle sequences and character-driven narratives. 
+    Despite a divisive final season, the show's impact remains undeniable, inspiring spin-offs, fan theories, and endless discussions. 
+    It also proved that TV could deliver movie-quality experiences, opening the door for ambitious projects like "House of the Dragon" and "The Witcher."`,
+    author: 'Sarah Johnson',
+    image:
+      'https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/12/gotmulti.jpg',
+    date: new Date('2025-01-12'),
+    category: { id: 2, title: 'Series' },
   },
   {
     id: 2265512909,
