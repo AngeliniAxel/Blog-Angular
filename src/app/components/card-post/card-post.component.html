@@ -1,0 +1,17 @@
+@if(post){
+<article class="card m-3 m-lg-1 p-2 rounded">
+  <h2>{{ post.title }}</h2>
+  <div class="d-flex justify-content-between detail">
+    <p><i>Posted by:</i> {{ post.author }}</p>
+    <p><i>Created at:</i> {{ post.date | date : "mediumDate" }}</p>
+  </div>
+
+  <figure>
+    <img
+      class="img-fluid object-fit-cover w-100 rounded"
+      [src]="post.image"
+      alt=""
+    />
+  </figure>
+</article>
+}
