@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ICategory } from '../../interfaces/category.interface';
+import { CategoryService } from '../../services/category.service';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'nav-bar',
@@ -7,4 +10,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })
-export class NavBarComponent {}
+export class NavBarComponent {
+  categories: ICategory[] = [];
+
+  postsService = inject(PostService);
+  categoriesService = inject(CategoryService);
+
+  ngOnInit() {
+    this.categories = this.categoriesService.getAll();
+    console.log(this.categories);
+  }
+}
