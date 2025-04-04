@@ -6,6 +6,6 @@ import { ViewPostComponent } from './pages/view-post/view-post.component';
 export const routes: Routes = [
   { path: 'home', pathMatch: 'full', component: HomeComponent },
   { path: 'new', component: NewComponent },
-  { path: 'post/:idpost', component: ViewPostComponent },
+  { path: 'post/:idPost', component: ViewPostComponent },
   { path: '**', redirectTo: '/home' },
 ];

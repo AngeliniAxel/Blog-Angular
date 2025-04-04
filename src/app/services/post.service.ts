@@ -26,4 +26,8 @@ export class PostService {
       return matchesInput && matchesCategory;
     });
   }
+
+  getById(id: number): Post | undefined {
+    return posts.find((post) => post.id === id);
+  }
 }
