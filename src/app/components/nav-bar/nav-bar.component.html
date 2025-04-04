@@ -37,8 +37,8 @@
       <!-- Filter dropdown -->
       <div class="d-flex">
         <label class="form-label">Filter by category</label>
-        <select class="form-select m-2" aria-label="Default select example">
-          <option selected value="all">All</option>
+        <select class="form-select m-2" (change)="onchangeCategory($event)">
+          <option selected value="">All</option>
           @for (category of categories ; track category.id) {
           <option [value]="category.title">
             {{ category.title }}
@@ -90,11 +90,10 @@
 
       <!-- Filter dropdown inside offcanvas menu -->
       <label class="form-label mt-3">Filter by category</label>
-      <select class="form-select mt-1">
-        <option data-bs-dismiss="offcanvas" selected>All</option>
-        <option selected value="all">All</option>
+      <select class="form-select mt-1" (change)="onchangeCategory($event)">
+        <option selected value="">All</option>
         @for (category of categories ; track category.id) {
-        <option data-bs-dismiss="offcanvas" [value]="category.title">
+        <option [value]="category.title">
           {{ category.title }}
         </option>
         }

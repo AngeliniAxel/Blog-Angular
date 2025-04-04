@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ICategory } from '../../interfaces/category.interface';
 import { CategoryService } from '../../services/category.service';
 import { PostService } from '../../services/post.service';
@@ -12,12 +12,21 @@ import { PostService } from '../../services/post.service';
 })
 export class NavBarComponent {
   categories: ICategory[] = [];
+  selectedCategory: ICategory | null = null;
+  router = inject(Router);
 
   postsService = inject(PostService);
   categoriesService = inject(CategoryService);
 
   ngOnInit() {
     this.categories = this.categoriesService.getAll();
-    console.log(this.categories);
+  }
+
+  onchangeCategory($event: Event) {
+    const category = ($event.target as HTMLSelectElement).value;
+    this.router.navigate([], {
+      queryParams: { category: category || null },
+      queryParamsHandling: 'merge',
+    });
   }
 }
