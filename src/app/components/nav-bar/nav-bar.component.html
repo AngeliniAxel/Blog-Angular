@@ -26,6 +26,8 @@
       </li>
     </ul>
 
+    <!-- filter inputs only visibles on home route -->
+    @if(router.url === '/home') {
     <!-- Right side: Search and Filter (hidden on small screens) -->
     <div class="d-flex align-items-center gap-3 d-none d-md-flex">
       <!-- Search input -->
@@ -56,6 +58,7 @@
         </select>
       </div>
     </div>
+    }
   </div>
 
   <!-- Offcanvas menu (for small screens) -->
@@ -93,6 +96,8 @@
         </li>
       </ul>
 
+      <!-- filter inputs only visibles on home route -->
+      @if(router.url === '/home') {
       <!-- Search input inside offcanvas menu -->
       <label class="form-label mt-3">Search</label>
       <input
@@ -100,6 +105,7 @@
         type="text"
         [(ngModel)]="inputSearch"
         (input)="onInputSearch($event)"
+        (change)="onChangeCloseOffcanvas()"
       />
 
       <!-- Filter dropdown inside offcanvas menu -->
@@ -114,8 +120,8 @@
         <option [value]="category.title">
           {{ category.title }}
         </option>
-        }
-      </select>
+        }</select
+      >}
     </div>
   </div>
 </nav>

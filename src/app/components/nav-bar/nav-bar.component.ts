@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import * as bootstrap from 'bootstrap';
 import { ICategory } from '../../interfaces/category.interface';
 import { CategoryService } from '../../services/category.service';
 import { PostService } from '../../services/post.service';
@@ -21,7 +22,14 @@ export class NavBarComponent {
   categoriesService = inject(CategoryService);
 
   ngOnInit() {
+    this.selectedCategory = '';
+    this.inputSearch = '';
     this.categories = this.categoriesService.getAll();
+
+    this.router.navigate([], {
+      queryParams: { category: null, search: null },
+      queryParamsHandling: 'merge',
+    });
   }
 
   onchangeCategory($event: Event) {
@@ -30,6 +38,20 @@ export class NavBarComponent {
       queryParams: { category: this.selectedCategory || null },
       queryParamsHandling: 'merge',
     });
+
+    const offcanvasElement = document.getElementById('offcanvas');
+    if (offcanvasElement) {
+      const offcanvasInstance =
+        bootstrap.Offcanvas.getInstance(offcanvasElement);
+      if (offcanvasInstance) {
+        offcanvasInstance.hide();
+      }
+    }
+
+    const backdrop = document.querySelector('.offcanvas-backdrop');
+    if (backdrop) {
+      backdrop.remove();
+    }
   }
 
   onInputSearch($event: Event) {
@@ -38,5 +60,21 @@ export class NavBarComponent {
       queryParams: { search: this.inputSearch || null },
       queryParamsHandling: 'merge',
     });
+  }
+
+  onChangeCloseOffcanvas() {
+    const offcanvasElement = document.getElementById('offcanvas');
+    if (offcanvasElement) {
+      const offcanvasInstance =
+        bootstrap.Offcanvas.getInstance(offcanvasElement);
+      if (offcanvasInstance) {
+        offcanvasInstance.hide();
+      }
+    }
+
+    const backdrop = document.querySelector('.offcanvas-backdrop');
+    if (backdrop) {
+      backdrop.remove();
+    }
   }
 }
