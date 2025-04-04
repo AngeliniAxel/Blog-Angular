@@ -16,6 +16,7 @@ export class HomeComponent {
   postsService = inject(PostService);
 
   category: string | null = null;
+  inputSearch: string = '';
 
   route = inject(ActivatedRoute);
 
@@ -24,7 +25,11 @@ export class HomeComponent {
 
     this.route.queryParams.subscribe((params) => {
       this.category = params['category'];
-      console.log(this.category);
+      this.inputSearch = params['search'];
+      this.posts = this.postsService.getByFilters(
+        this.inputSearch,
+        this.category
+      );
     });
   }
 }

@@ -31,13 +31,22 @@
       <!-- Search input -->
       <div class="d-flex align-items-center">
         <label class="form-label px-1">Search</label>
-        <input class="form-control" type="text" />
+        <input
+          class="form-control"
+          type="text"
+          (input)="onInputSearch($event)"
+          [(ngModel)]="inputSearch"
+        />
       </div>
 
       <!-- Filter dropdown -->
       <div class="d-flex">
         <label class="form-label">Filter by category</label>
-        <select class="form-select m-2" (change)="onchangeCategory($event)">
+        <select
+          class="form-select m-2"
+          [(ngModel)]="selectedCategory"
+          (change)="onchangeCategory($event)"
+        >
           <option selected value="">All</option>
           @for (category of categories ; track category.id) {
           <option [value]="category.title">
@@ -86,11 +95,20 @@
 
       <!-- Search input inside offcanvas menu -->
       <label class="form-label mt-3">Search</label>
-      <input class="form-control" type="text" />
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="inputSearch"
+        (input)="onInputSearch($event)"
+      />
 
       <!-- Filter dropdown inside offcanvas menu -->
       <label class="form-label mt-3">Filter by category</label>
-      <select class="form-select mt-1" (change)="onchangeCategory($event)">
+      <select
+        class="form-select mt-1"
+        [(ngModel)]="selectedCategory"
+        (change)="onchangeCategory($event)"
+      >
         <option selected value="">All</option>
         @for (category of categories ; track category.id) {
         <option [value]="category.title">
