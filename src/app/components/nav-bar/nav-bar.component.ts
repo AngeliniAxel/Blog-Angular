@@ -32,6 +32,10 @@ export class NavBarComponent {
     });
   }
 
+  get isHomeRoute(): boolean {
+    return this.router.url.includes('/home');
+  }
+
   onchangeCategory($event: Event) {
     this.selectedCategory = ($event.target as HTMLSelectElement).value;
     this.router.navigate([], {

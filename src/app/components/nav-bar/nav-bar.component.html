@@ -27,7 +27,7 @@
     </ul>
 
     <!-- filter inputs only visibles on home route -->
-    @if(router.url === '/home') {
+    @if(isHomeRoute) {
     <!-- Right side: Search and Filter (hidden on small screens) -->
     <div class="d-flex align-items-center gap-3 d-none d-md-flex">
       <!-- Search input -->
@@ -97,7 +97,7 @@
       </ul>
 
       <!-- filter inputs only visibles on home route -->
-      @if(router.url === '/home') {
+      @if(isHomeRoute) {
       <!-- Search input inside offcanvas menu -->
       <label class="form-label mt-3">Search</label>
       <input
