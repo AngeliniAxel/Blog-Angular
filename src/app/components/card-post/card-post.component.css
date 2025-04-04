@@ -8,10 +8,16 @@ article {
   img {
     height: 200px;
   }
+  a {
+    color: var(--grey);
+  }
 
   &:hover {
     border-color: var(--purple-strong);
     cursor: pointer;
     scale: 1.01;
+    a {
+      color: var(--purple-strong);
+    }
   }
 }
