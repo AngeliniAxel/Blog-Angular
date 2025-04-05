@@ -11,6 +11,4 @@ import { Post } from '../../interfaces/post.interface';
 })
 export class CardPostComponent {
   @Input() post: Post | undefined;
-
-  goToPost(postId: number) {}
 }
