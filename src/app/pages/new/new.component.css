@@ -1,0 +1,39 @@
+.container {
+  color: var(--dark);
+
+  hr {
+    height: 5px;
+    background-color: var(--purple-strong);
+    margin: 20px 0;
+    opacity: 0.6;
+  }
+
+  form {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+
+    textarea {
+      resize: none; /* Bloquea el redimensionamiento */
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--purple-light);
+      box-shadow: 0 0 0 0.2rem rgba(128, 0, 128, 0.25);
+      outline: none;
+    }
+
+    .btn {
+      background-color: var(--purple-light);
+      border: none;
+      color: var(--white);
+      width: 12.5em;
+      height: 2.5em;
+
+      &:hover {
+        background-color: var(--purple-strong);
+      }
+    }
+  }
+}
