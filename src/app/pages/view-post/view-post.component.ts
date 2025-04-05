@@ -10,11 +10,13 @@ import { PostService } from '../../services/post.service';
   styleUrl: './view-post.component.css',
 })
 export class ViewPostComponent {
+  // gets the idPost from the url
   @Input() idPost: string = '';
   post: Post | undefined = undefined;
   postsService = inject(PostService);
 
   ngOnInit() {
+    // uses the idPost to fetch post data
     this.post = this.postsService.getById(Number(this.idPost));
   }
 }
