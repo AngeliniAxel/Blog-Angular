@@ -23,7 +23,9 @@ export class HomeComponent {
     // fetches posts data from the service
     this.posts = this.postsService.getAll();
 
-    // listens to query params changes
+    // sorts posts by date (newest first)
+    this.posts.sort((a, b) => b.date.getTime() - a.date.getTime());
+
     this.listenToQueryParams();
   }
 
