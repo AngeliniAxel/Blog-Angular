@@ -16,7 +16,8 @@
     min-height: 200px;
   }
 
-  p {
+  .post-text {
+    white-space: pre-wrap;
     margin: 0.6rem 0;
     font-size: 1.2rem;
   }
