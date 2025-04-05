@@ -1,10 +1,11 @@
+import { DatePipe } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { Post } from '../../interfaces/post.interface';
 import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-view-post',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './view-post.component.html',
   styleUrl: './view-post.component.css',
 })
