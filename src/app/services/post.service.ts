@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { v4 as uuidv4 } from 'uuid';
 import { posts } from '../db/posts.db';
 import { Post } from '../interfaces/post.interface';
 
@@ -8,6 +9,10 @@ import { Post } from '../interfaces/post.interface';
 export class PostService {
   getAll(): Post[] {
     return posts;
+  }
+
+  getById(id: string): Post | undefined {
+    return posts.find((post) => post.id === id);
   }
 
   /**
@@ -40,7 +45,9 @@ export class PostService {
     });
   }
 
-  getById(id: string): Post | undefined {
-    return posts.find((post) => post.id === id);
+  createNewPost(post: Post): Post {
+    const newPost = { ...post, id: uuidv4(), date: new Date() };
+    posts.push(newPost);
+    return newPost;
   }
 }
