@@ -62,7 +62,12 @@
   </div>
 
   <!-- Offcanvas menu (for small screens) -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas">
+  <div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="offcanvas"
+    data-bs-scroll="true"
+  >
     <div class="offcanvas-header">
       <!-- Close button for the offcanvas menu -->
       <button
@@ -105,7 +110,7 @@
         type="text"
         [(ngModel)]="inputSearch"
         (input)="onInputSearch($event)"
-        (change)="onChangeCloseOffcanvas()"
+        (change)="closeOffCanvas()"
       />
 
       <!-- Filter dropdown inside offcanvas menu -->
