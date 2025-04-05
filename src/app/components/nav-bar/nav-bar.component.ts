@@ -22,10 +22,14 @@ export class NavBarComponent {
   categoriesService = inject(CategoryService);
 
   ngOnInit() {
+    // Initialize filter controls with empty values
     this.selectedCategory = '';
     this.inputSearch = '';
+
+    // Load all available categories from service
     this.categories = this.categoriesService.getAll();
 
+    // Reset query parameters
     this.router.navigate([], {
       queryParams: { category: null, search: null },
       queryParamsHandling: 'merge',
@@ -36,6 +40,14 @@ export class NavBarComponent {
     return this.router.url.includes('/home');
   }
 
+  /**
+   *  Extracts new category value from select element
+   *  Updates URL with new category parameter or removes if null/empty
+   *  Closes any open off-canvas navigation
+   *
+   * @param $event - The change event from the HTML select element
+   *
+   */
   onchangeCategory($event: Event) {
     this.selectedCategory = ($event.target as HTMLSelectElement).value;
     this.router.navigate([], {
@@ -43,21 +55,18 @@ export class NavBarComponent {
       queryParamsHandling: 'merge',
     });
 
-    const offcanvasElement = document.getElementById('offcanvas');
-    if (offcanvasElement) {
-      const offcanvasInstance =
-        bootstrap.Offcanvas.getInstance(offcanvasElement);
-      if (offcanvasInstance) {
-        offcanvasInstance.hide();
-      }
-    }
-
-    const backdrop = document.querySelector('.offcanvas-backdrop');
-    if (backdrop) {
-      backdrop.remove();
-    }
+    // Close mobile/off-canvas menu if open
+    this.closeOffCanvas();
   }
 
+  /**
+   *  Captures the current search term from the input element
+   *  Updates the URL with the search parameter (removes if empty)
+   *  Maintains all other existing query parameters
+   *
+   * @param $event - The input event from the search field
+   *
+   */
   onInputSearch($event: Event) {
     this.inputSearch = ($event.target as HTMLSelectElement).value;
     this.router.navigate([], {
@@ -66,16 +75,25 @@ export class NavBarComponent {
     });
   }
 
-  onChangeCloseOffcanvas() {
+  /**
+   * Closes the Bootstrap offcanvas menu and cleans up the backdrop.
+   * Handles both the offcanvas instance and any leftover DOM elements.
+   *
+   */
+  closeOffCanvas() {
+    // Get the offcanvas DOM element
     const offcanvasElement = document.getElementById('offcanvas');
     if (offcanvasElement) {
+      // Get the offcanvas DOM element
       const offcanvasInstance =
         bootstrap.Offcanvas.getInstance(offcanvasElement);
       if (offcanvasInstance) {
+        // Hide the offcanvas using Bootstrap's method
         offcanvasInstance.hide();
       }
     }
 
+    // Manually remove any remaining backdrop element
     const backdrop = document.querySelector('.offcanvas-backdrop');
     if (backdrop) {
       backdrop.remove();
