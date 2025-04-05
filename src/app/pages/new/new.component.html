@@ -1,30 +1,54 @@
 <div class="container">
   <h2 class="mt-2 text-center">New post</h2>
   <hr />
-  <form>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label class="form-label" for="title">Title</label>
-      <input type="text" class="form-control" id="title" />
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        formControlName="title"
+      />
     </div>
     <div class="mb-3">
       <label class="form-label" for="text">Text</label>
-      <textarea class="form-control" rows="5" id="text"></textarea>
+      <textarea
+        class="form-control"
+        rows="5"
+        id="text"
+        formControlName="text"
+      ></textarea>
     </div>
     <div class="mb-3">
       <label class="form-label" for="author">Author</label>
-      <input type="text" class="form-control" id="author" />
+      <input
+        type="text"
+        class="form-control"
+        id="author"
+        formControlName="author"
+      />
     </div>
     <div class="mb-3">
       <label class="form-label" for="image">Image url</label>
-      <input type="email" class="form-control" id="image" />
+      <input
+        type="email"
+        class="form-control"
+        id="image"
+        formControlName="image"
+      />
     </div>
-    <label for=""></label>
     <div
       class="d-flex flex-column flex-sm-row flex-nowrap justify-content-between mb-3"
     >
       <div class="mb-4">
         <label class="form-label" for="category">Category</label>
-        <select class="form-select" id="category" required>
+        <select
+          class="form-select"
+          id="category"
+          required
+          formControlName="category"
+        >
           <option value="" disabled selected>Select a category</option>
           @for (category of categories ; track category.id) {
           <option [value]="category.title">
