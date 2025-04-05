@@ -40,7 +40,7 @@ export class PostService {
     });
   }
 
-  getById(id: number): Post | undefined {
+  getById(id: string): Post | undefined {
     return posts.find((post) => post.id === id);
   }
 }

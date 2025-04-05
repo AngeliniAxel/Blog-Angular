@@ -17,6 +17,6 @@ export class ViewPostComponent {
 
   ngOnInit() {
     // uses the idPost to fetch post data
-    this.post = this.postsService.getById(Number(this.idPost));
+    this.post = this.postsService.getById(this.idPost);
   }
 }

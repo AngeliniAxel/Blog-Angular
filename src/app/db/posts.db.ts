@@ -1,8 +1,9 @@
+import { v4 as uuidv4 } from 'uuid';
 import { Post } from '../interfaces/post.interface';
 
 export const posts: Post[] = [
   {
-    id: 2548460933,
+    id: uuidv4(),
     title: 'The Evolution of Batman in Comics and Movies',
     text: `Batman has been a key figure in the comic book industry for decades. 
     From the dark and gritty stories of Frank Miller to the lighter animated series of the 90s, the character has seen numerous adaptations. 
@@ -16,7 +17,7 @@ export const posts: Post[] = [
     category: { id: 1, title: 'Comics' },
   },
   {
-    id: 3394829102,
+    id: uuidv4(),
     title: 'The Rise of Streaming: How TV Series Have Changed',
     text: `Streaming platforms have revolutionized the way we consume TV series. 
     The days of waiting a week for the next episode are gone, replaced by binge-watching entire seasons in a single weekend. 
@@ -31,7 +32,7 @@ export const posts: Post[] = [
     category: { id: 2, title: 'Series' },
   },
   {
-    id: 2476233376,
+    id: uuidv4(),
     title: 'Attack on Titan: A Dark Masterpiece',
     text: `Attack on Titan has redefined the anime genre with its dark themes, complex characters, and intense storytelling. 
     Set in a world where humanity is under threat from gigantic humanoid creatures known as Titans, the story follows Eren Yeager and his friends as they fight for survival and uncover the secrets behind the Titans’ existence. 
@@ -45,7 +46,7 @@ export const posts: Post[] = [
     category: { id: 4, title: 'Anime' },
   },
   {
-    id: 1511834430,
+    id: uuidv4(),
     title: 'Top 10 Sci-Fi Movies That Changed the Genre',
     text: `Science fiction has evolved significantly over the decades, with certain films changing the direction of the genre and influencing generations of filmmakers. "Metropolis" (1927), one of the earliest examples of sci-fi cinema, set the foundation with its dystopian vision and groundbreaking special effects. Stanley Kubrick's "2001: A Space Odyssey" (1968) raised the genre to an intellectual level, combining deep philosophical themes with groundbreaking visuals and sound design. "Star Wars: A New Hope" (1977) revolutionized science fiction with its space opera style, becoming a cultural phenomenon and establishing a massive franchise. Ridley Scott's "Blade Runner" (1982) merged cyberpunk aesthetics with existential themes, leaving an indelible mark on future sci-fi films. "Alien" (1979) combined horror with sci-fi, introducing a new breed of extraterrestrial terror. The Wachowskis' "The Matrix" (1999) redefined our understanding of reality, using groundbreaking visual effects to present a mind-bending world of simulated consciousness. "Jurassic Park" (1993) showcased the power of CGI and brought dinosaurs to life, setting new standards in visual storytelling. James Cameron's "The Terminator" (1984) introduced a chilling portrayal of artificial intelligence and time travel, influencing sci-fi narratives for years. These films not only defined their time but shaped the future of science fiction.`,
     author: 'Bob Brown',
@@ -55,7 +56,7 @@ export const posts: Post[] = [
     category: { id: 3, title: 'Movies' },
   },
   {
-    id: 7839210456,
+    id: uuidv4(),
     title: 'Solo Leveling: The Manhwa That Redefined Power Fantasy',
     text: `Solo Leveling has become one of the most influential manhwas in recent years, captivating fans with its breathtaking artwork and compelling power fantasy storyline. 
     Written by Chugong and illustrated by Dubu, the series follows Sung Jin-Woo, an E-rank hunter who is considered the weakest in a world where hunters fight monsters in mysterious gates. 
@@ -70,7 +71,7 @@ export const posts: Post[] = [
     category: { id: 4, title: 'Anime' },
   },
   {
-    id: 3204361129,
+    id: uuidv4(),
     title: 'The Legacy of Star Wars',
     text: `The legacy of "Star Wars" is unparalleled in the world of cinema and pop culture. Since its debut in 1977, George Lucas' space opera has not only redefined science fiction but also influenced countless aspects of storytelling, special effects, and film marketing. "Star Wars" introduced a galaxy far, far away, blending mythology, adventure, and futuristic technology into a timeless narrative. Its characters—Luke Skywalker, Princess Leia, Darth Vader—have become iconic, resonating with generations of fans worldwide. The groundbreaking use of special effects, especially in the original trilogy, set new standards for the industry. Beyond the films, "Star Wars" has left an indelible mark on television, books, comics, and video games, creating a vast, interconnected universe. The franchise's cultural impact is evident in its ability to inspire new generations of filmmakers, storytellers, and creators, ensuring that the "Star Wars" legacy will continue to thrive for years to come.`,
     author: 'John Doe',
@@ -79,7 +80,7 @@ export const posts: Post[] = [
     category: { id: 3, title: 'Movies' },
   },
   {
-    id: 6728394012,
+    id: uuidv4(),
     title: 'How Sitcoms Have Evolved Over the Decades',
     text: `Sitcoms have been a staple of television since the early days of broadcasting, but their format has evolved significantly. 
     Classic shows like "Friends" and "Seinfeld" relied on laugh tracks and episodic storytelling, 
@@ -94,7 +95,7 @@ export const posts: Post[] = [
     category: { id: 2, title: 'Series' },
   },
   {
-    id: 9361333697,
+    id: uuidv4(),
     title: 'How Marvel Became the King of the Box Office',
     text: `The Marvel Cinematic Universe (MCU) is the highest-grossing film franchise in history. 
       Starting with Iron Man in 2008, the MCU has built a complex, interconnected universe of heroes and villains. 
@@ -106,7 +107,7 @@ export const posts: Post[] = [
     category: { id: 1, title: 'Comics' },
   },
   {
-    id: 3353450959,
+    id: uuidv4(),
     title: 'The Influence of Studio Ghibli on Animation',
     text: `Studio Ghibli, founded by Hayao Miyazaki, has created some of the most beautiful and emotional animated films. 
       From Spirited Away to My Neighbor Totoro, Ghibli films explore themes of nature, childhood, and human connection.`,
@@ -117,7 +118,7 @@ export const posts: Post[] = [
     category: { id: 3, title: 'Movies' },
   },
   {
-    id: 4893027711,
+    id: uuidv4(),
     title: 'Why "Game of Thrones" Defined a Generation',
     text: `"Game of Thrones" wasn't just a fantasy show; it was a cultural phenomenon. 
     Based on George R.R. Martin's books, the series combined epic storytelling, unexpected deaths, and complex political intrigue. 
@@ -131,7 +132,7 @@ export const posts: Post[] = [
     category: { id: 2, title: 'Series' },
   },
   {
-    id: 2265512909,
+    id: uuidv4(),
     title: 'The Psychology of Horror Movies',
     text: `Why do people enjoy being scared? 
       Horror films tap into our deepest fears and anxieties, creating a safe space to experience adrenaline and fear. 
