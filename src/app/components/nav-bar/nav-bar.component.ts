@@ -75,6 +75,11 @@ export class NavBarComponent {
     });
   }
 
+  resetFilters(): void {
+    this.selectedCategory = '';
+    this.inputSearch = '';
+  }
+
   /**
    * Closes the Bootstrap offcanvas menu and cleans up the backdrop.
    * Handles both the offcanvas instance and any leftover DOM elements.

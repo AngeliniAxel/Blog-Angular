@@ -58,6 +58,8 @@
         </select>
       </div>
     </div>
+    }@else {
+    {{ resetFilters() }}
     }
   </div>
 
@@ -103,6 +105,7 @@
 
       <!-- filter inputs only visibles on home route -->
       @if(isHomeRoute) {
+
       <!-- Search input inside offcanvas menu -->
       <label class="form-label mt-3">Search</label>
       <input
@@ -126,7 +129,9 @@
           {{ category.title }}
         </option>
         }</select
-      >}
+      >} @else {
+      {{ resetFilters() }}
+      }
     </div>
   </div>
 </nav>
