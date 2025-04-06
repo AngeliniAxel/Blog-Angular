@@ -51,7 +51,12 @@ export class NewComponent {
   }
 
   onSubmit() {
-    this.postsService.createNewPost(this.form.value);
+    // fetch the selected category object from the service using the title from the form
+    const category = this.categoriesService.getByTitle(
+      this.form.value.category
+    );
+
+    this.postsService.createNewPost({ ...this.form.value, category });
     this.router.navigate(['/home']);
   }
 

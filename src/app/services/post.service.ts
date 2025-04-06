@@ -1,12 +1,15 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import { posts } from '../db/posts.db';
 import { Post } from '../interfaces/post.interface';
+import { CategoryService } from './category.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
+  categoriesService = inject(CategoryService);
+
   getAll(): Post[] {
     return posts;
   }
@@ -45,8 +48,13 @@ export class PostService {
     });
   }
 
+  /**
+   * Creates a new post and adds it to the global `posts` array.
+   * Generates a unique ID (UUID) and sets the current date automatically.
+   *
+   */
   createNewPost(post: Post): Post {
-    const newPost = { ...post, id: uuidv4(), date: new Date() };
+    const newPost: Post = { ...post, id: uuidv4(), date: new Date() };
     posts.push(newPost);
     return newPost;
   }

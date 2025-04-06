@@ -24,4 +24,9 @@ export class CategoryService {
     // Convert the Map values back to an array and return the unique categories
     return Array.from(uniqueMap.values());
   }
+
+  getByTitle(title: string): ICategory {
+    // Find and return the category with the specified title
+    return this.getAll().find((cat) => cat.title === title) as ICategory;
+  }
 }
