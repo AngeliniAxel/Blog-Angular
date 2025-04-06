@@ -1,5 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ICategory } from '../../interfaces/category.interface';
 import { CategoryService } from '../../services/category.service';
@@ -25,16 +30,30 @@ export class NewComponent {
 
   constructor() {
     this.form = new FormGroup({
-      title: new FormControl(),
+      title: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(70),
+      ]),
       text: new FormControl(),
-      author: new FormControl(),
+      author: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20),
+      ]),
       image: new FormControl(),
-      category: new FormControl(),
+      category: new FormControl(null, [Validators.required]),
     });
   }
 
   onSubmit() {
     this.postsService.createNewPost(this.form.value);
     this.router.navigate(['/home']);
+  }
+
+  checkError(field: string, validator: string): boolean | undefined {
+    return (
+      this.form.get(field)?.hasError(validator) && this.form.get(field)?.touched
+    );
   }
 }

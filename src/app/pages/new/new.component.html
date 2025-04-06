@@ -10,6 +10,12 @@
         id="title"
         formControlName="title"
       />
+      @if(checkError('title', 'required')) {
+      <small>This field is required</small>
+      } @if(checkError('title', 'minlength') || checkError('title',
+      'maxlength')) {
+      <small>The title must be between 5 and 70 characters</small>
+      }
     </div>
     <div class="mb-3">
       <label class="form-label" for="text">Text</label>
@@ -28,6 +34,12 @@
         id="author"
         formControlName="author"
       />
+      @if(checkError('author', 'required')) {
+      <small>This field is required</small>
+      } @if(checkError('author', 'minlength') || checkError('author',
+      'maxlength')) {
+      <small>The author field must be between 5 and 20 characters</small>
+      }
     </div>
     <div class="mb-3">
       <label class="form-label" for="image">Image url</label>
@@ -56,12 +68,16 @@
           </option>
           }
         </select>
+        @if(checkError('category', 'required')) {
+        <small>This field is required</small>
+        }
       </div>
 
       <input
         type="submit"
         value="Send"
         class="btn btn-info align-self-center"
+        [disabled]="form.invalid"
       />
     </div>
   </form>

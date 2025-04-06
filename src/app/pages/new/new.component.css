@@ -14,7 +14,7 @@
     font-size: 1.2rem;
 
     textarea {
-      resize: none; /* Bloquea el redimensionamiento */
+      resize: none;
     }
 
     .form-control:focus,
@@ -36,4 +36,20 @@
       }
     }
   }
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+small {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
 }
