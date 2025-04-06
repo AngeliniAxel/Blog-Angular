@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Notyf } from 'notyf';
 import { ICategory } from '../../interfaces/category.interface';
 import { CategoryService } from '../../services/category.service';
 import { PostService } from '../../services/post.service';
@@ -22,6 +23,7 @@ export class NewComponent {
   categoriesService = inject(CategoryService);
   postsService = inject(PostService);
   router = inject(Router);
+  notyf: Notyf;
 
   ngOnInit() {
     this.categories = this.categoriesService.getAll();
@@ -30,6 +32,8 @@ export class NewComponent {
   form: FormGroup;
 
   constructor() {
+    this.notyf = new Notyf();
+
     this.form = new FormGroup({
       title: new FormControl(null, [
         Validators.required,
@@ -57,7 +61,19 @@ export class NewComponent {
       this.form.value.category
     );
 
-    this.postsService.createNewPost({ ...this.form.value, category });
+    const newPost = this.postsService.createNewPost({
+      ...this.form.value,
+      category,
+    });
+
+    // Notify the user about the creation status
+    if (newPost)
+      this.notyf.success({
+        message: 'Post created successfully!',
+        background: '#9b59b6',
+      });
+    else this.notyf.error('There was an error creating the post!');
+
     this.router.navigate(['/home']);
   }
 
