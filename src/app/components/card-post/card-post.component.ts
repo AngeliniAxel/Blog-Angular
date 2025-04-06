@@ -11,4 +11,10 @@ import { Post } from '../../interfaces/post.interface';
 })
 export class CardPostComponent {
   @Input() post: Post | undefined;
+
+  // if the image is not loaded, show a default image
+  onImageError(event: Event): void {
+    const target = event.target as HTMLImageElement;
+    target.src = 'images/no-image-available.jpg';
+  }
 }

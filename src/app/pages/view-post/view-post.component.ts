@@ -19,4 +19,10 @@ export class ViewPostComponent {
     // uses the idPost to fetch post data
     this.post = this.postsService.getById(this.idPost);
   }
+
+  // if the image is not loaded, show a default image
+  onImageError(event: Event): void {
+    const target = event.target as HTMLImageElement;
+    target.src = 'images/no-image-available.jpg';
+  }
 }

@@ -11,6 +11,7 @@
       class="img-fluid object-fit-cover w-100 rounded"
       [src]="post.image"
       [alt]="post.title"
+      (error)="onImageError($event)"
     />
   </figure>
   <a class="text-center text-decoration-none">Click to see more!</a>
