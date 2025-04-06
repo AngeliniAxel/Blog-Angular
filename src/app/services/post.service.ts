@@ -58,4 +58,16 @@ export class PostService {
     posts.push(newPost);
     return newPost;
   }
+
+  /**
+   * Deletes an existing post and returnes it.
+   * If the post is not found, returns undefined.
+   *
+   * @param {id} string - The id of the post to be deleted
+   */
+  deletePost(id: string): Post | undefined {
+    const index = posts.findIndex((post) => post.id === id);
+
+    return posts.splice(index, 1)[0];
+  }
 }

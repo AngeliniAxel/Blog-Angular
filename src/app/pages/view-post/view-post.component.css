@@ -21,4 +21,15 @@
     margin: 0.6rem 0;
     font-size: 1.2rem;
   }
+
+  .btn {
+    padding: 0.5em 1.8em;
+    font-size: 1.2rem;
+    background-color: var(--purple-light);
+    color: var(--white);
+
+    &:hover {
+      background-color: tomato;
+    }
+  }
 }

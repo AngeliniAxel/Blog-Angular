@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from '../../interfaces/post.interface';
 import { PostService } from '../../services/post.service';
 
@@ -14,6 +15,7 @@ export class ViewPostComponent {
   @Input() idPost: string = '';
   post: Post | undefined = undefined;
   postsService = inject(PostService);
+  router = inject(Router);
 
   ngOnInit() {
     // uses the idPost to fetch post data
@@ -24,5 +26,10 @@ export class ViewPostComponent {
   onImageError(event: Event): void {
     const target = event.target as HTMLImageElement;
     target.src = 'images/no-image-available.jpg';
+  }
+
+  onClick(id: string) {
+    this.postsService.deletePost(id);
+    this.router.navigate(['/home']);
   }
 }

@@ -20,6 +20,9 @@
     </figure>
     <p class="post-text">{{ post.text }}</p>
     <hr />
+    <div class="d-flex justify-content-end">
+      <button class="btn" (click)="onClick(post.id)">Delete post</button>
+    </div>
   </article>
 </div>
 
