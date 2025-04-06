@@ -55,6 +55,11 @@
         id="image"
         formControlName="image"
       />
+      @if(checkError('image', 'required')) {
+      <small>This field is required</small>
+      } @if(checkError('image', 'invalidUrl')) {
+      <small>This must be a valid url</small>
+      }
     </div>
     <div
       class="d-flex flex-column flex-sm-row flex-nowrap justify-content-between mb-3"

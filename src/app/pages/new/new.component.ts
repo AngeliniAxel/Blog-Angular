@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import {
+  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -45,7 +46,7 @@ export class NewComponent {
         Validators.minLength(3),
         Validators.maxLength(20),
       ]),
-      image: new FormControl(),
+      image: new FormControl(null, [Validators.required, this.urlValidator]),
       category: new FormControl(null, [Validators.required]),
     });
   }
@@ -64,5 +65,14 @@ export class NewComponent {
     return (
       this.form.get(field)?.hasError(validator) && this.form.get(field)?.touched
     );
+  }
+
+  urlValidator(control: AbstractControl) {
+    const urlPattern =
+      /^(https?:\/\/)?([\w-]+\.)+[\w-]+(:\d{1,5})?(\/\S*)?(\?\S*)?(#\S*)?$/i;
+    if (control.value && !urlPattern.test(control.value)) {
+      return { invalidUrl: true };
+    }
+    return null;
   }
 }
