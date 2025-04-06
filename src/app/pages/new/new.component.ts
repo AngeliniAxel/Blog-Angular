@@ -35,7 +35,11 @@ export class NewComponent {
         Validators.minLength(3),
         Validators.maxLength(70),
       ]),
-      text: new FormControl(),
+      text: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(1500),
+      ]),
       author: new FormControl(null, [
         Validators.required,
         Validators.minLength(3),

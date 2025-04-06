@@ -39,12 +39,14 @@
 }
 
 input.ng-valid.ng-touched,
-select.ng-valid.ng-touched {
+select.ng-valid.ng-touched,
+#text.ng-valid.ng-touched {
   border: 1px solid green;
 }
 
 input.ng-invalid.ng-touched,
-select.ng-invalid.ng-touched {
+select.ng-invalid.ng-touched,
+#text.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
